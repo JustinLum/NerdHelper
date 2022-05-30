@@ -4,6 +4,7 @@ from telegram import Update, ForceReply
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
+import env as ev
 
 logging.basicConfig(
     format='%(asctime)s - %(name)s %(levelname)s - %(message)s', level=logging.INFO
@@ -64,7 +65,7 @@ def create_new(update: Update, _:CallbackContext) -> None:
   update.message.reply_text(f'{todo_list[0]}')
 
 def main() -> None:
-  token = '5362228092:AAHZs65AIhRe9osKuQPPQRuSzCAsjBdjcD8'
+  token = ev.API_key
 
   updater = Updater(token)
 
