@@ -7,6 +7,9 @@ authors = ["JustinLum1 <<>>"]
 [tool.poetry.dependencies]
 python = "^3.8"
 Flask = "^2.1.2"
+python-telegram-bot = "^13.12"
+telegram = "^0.0.1"
+google-api-python-client = "^2.49.0"
 
 [tool.poetry.dev-dependencies]
 
