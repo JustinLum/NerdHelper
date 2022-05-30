@@ -5,6 +5,8 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, Callb
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 import env as ev
+from keepalive import app
+import threading 
 
 logging.basicConfig(
     format='%(asctime)s - %(name)s %(levelname)s - %(message)s', level=logging.INFO
@@ -82,6 +84,7 @@ def main() -> None:
   updater.start_polling()
   updater.idle()
 
+threading.Thread(target = lambda: app.run(host = '0.0.0.0')).start()
 if __name__ == '__main__':
   main()
 
